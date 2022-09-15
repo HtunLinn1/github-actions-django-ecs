@@ -13,3 +13,25 @@
   ```
   aws cloudformation delete-stack --stack-name htunlinn-stack
   ```
+
+## Dockerfile
+- Dockerイメージビルド
+  ```
+  cd git-actions-django-ecs
+  docker build -t djangoimage .
+  docker images
+  ```
+- Dockerコンテナ起動
+```
+docker run --rm -p 8080:8080 djangoimage
+```
+
+## Docker Compose
+- 起動
+  ```
+  docker-compose up -d
+  ```
+- 停止
+  ```
+  docker-compose down
+  ```
