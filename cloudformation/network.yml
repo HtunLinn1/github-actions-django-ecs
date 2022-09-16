@@ -444,31 +444,5 @@ Outputs:
     Export:
       Name: !Sub "${MyEnvName}-ECSTaskExecutionRole"
 
-  # ------------------------------------------------------------#
-  #  EC2 Instance
-  # ------------------------------------------------------------#
-  # WebServer:
-  #   Type: AWS::EC2::Instance
-  #   Properties:
-  #     ImageId: ami-0b89f7b3f054b957e
-  #     InstanceType: t2.micro
-  #     KeyName: CMITS2207-KeyPair
-  #     SubnetId: !Ref PublicSubnetA
-  #     SecurityGroupIds:
-  #       - !Ref MySecurityGroup
-  #     Tags:
-  #       - Key: Name
-  #         Value: !Sub "${MyEnvName} WebServer"
-  #     UserData:
-  #       Fn::Base64: |
-  #         #!/bin/bash
-  #         sudo yum update -y && \
-  #         sudo yum install git -y && \
-  #         sudo amazon-linux-extras install  -y docker && \
-  #         sudo usermod -a -G docker ec2-user && \
-  #         sudo systemctl start docker.service && \
-  #         sudo systemctl status docker.service && \
-  #         sudo systemctl enable docker.service && \
-  #         sudo curl -L https://github.com/docker/compose/releases/download/v2.10.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose && \
-  #         sudo chmod +x /usr/local/bin/docker-compose && \
-  #         sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+
